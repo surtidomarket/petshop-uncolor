@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toallas Personalizadas para Mascotas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/lucide-react@0.344.0/dist/umd/lucide-react.js" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center space-x-2 hover:text-blue-200">
+                        <span class="font-semibold">Inicio</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-2 hover:text-blue-200">
+                        <span class="font-semibold">Toallas Mascota</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="hidden md:block text-sm">Pedidos Nacionales - Pago NEQUI | Domicilio Seguro</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Header -->
+    <div class="bg-blue-600 text-white py-6 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-2xl md:text-3xl font-bold mb-4">
+                Toallas Personalizadas para tu Mascota
+            </h1>
+            <p class="text-lg">
+                Elige el color favorito de la toalla, escribe el nombre de tu mascota. ¡Así de fácil!
+            </p>
+        </div>
+    </div>
+
+    <!-- Delivery Info -->
+    <div class="bg-white py-8 px-4 shadow-sm mb-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex items-start space-x-3">
+                    <div>
+                        <h3 class="font-semibold">Tiempo de Entrega</h3>
+                        <p class="text-sm text-gray-600">5 días hábiles</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div>
+                        <h3 class="font-semibold">Horarios de Despacho</h3>
+                        <p class="text-sm text-gray-600">Lunes a viernes, 8:00 a.m. - 5:00 p.m.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div>
+                        <h3 class="font-semibold">Método de Pago</h3>
+                        <p class="text-sm text-gray-600">Pago contra entrega</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div>
+                        <h3 class="font-semibold">Nota</h3>
+                        <p class="text-sm text-gray-600">Los tiempos pueden variar según ubicación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Product Cards -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <img src="https://i.ibb.co/7CF5jgb/amarilla.jpg" alt="Toalla Amarilla" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Amarilla Bordada</h3>
+                    <p class="text-sm text-gray-600 mt-1">Color: Amarilla</p>
+                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
+                    <form action="https://mpago.li/2qoZH77" method="GET">
+                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
+                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+                            Comprar Ahora
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Repeat similar product cards for all other products -->
+            <!-- Add all other product cards following the same structure -->
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2024 PETFROTHY. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
