@@ -6,10 +6,134 @@
     <title>Toallas Personalizadas para Mascotas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/lucide-react@0.344.0/dist/umd/lucide-react.js" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para darle un tema de mascotas */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef9e4;
+        }
+
+        .navbar {
+            background-color: #f76c6c;
+        }
+
+        .navbar a:hover {
+            color: #f9a6a6;
+        }
+
+        .header {
+            background-color: #ff9f80;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .product-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            color: #f76c6c;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .product-price {
+            color: #f76c6c;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .customer-reviews ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .customer-reviews li {
+            background-color: #ffe1e1;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .customer-reviews strong {
+            color: #f76c6c;
+        }
+
+        .cta-button {
+            background-color: #f76c6c;
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f9a6a6;
+        }
+
+        .footer {
+            background-color: #f76c6c;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            color: #f9a6a6;
+        }
+
+        .color-selector {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .color-selector button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .color-selector button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gray-50">
+<body>
     <!-- Navbar -->
-    <nav class="bg-blue-600 text-white shadow-lg">
+    <nav class="navbar text-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-4">
@@ -28,14 +152,10 @@
     </nav>
 
     <!-- Welcome Header -->
-    <div class="bg-blue-600 text-white py-6 px-4">
+    <div class="header py-6 px-4">
         <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-2xl md:text-3xl font-bold mb-4">
-                Toallas Personalizadas para tu Mascota
-            </h1>
-            <p class="text-lg">
-                Elige el color favorito de la toalla, escribe el nombre de tu mascota. ¡Así de fácil!
-            </p>
+            <h1 class="font-bold mb-4">Toallas Personalizadas para tu Mascota</h1>
+            <p class="text-lg">Elige el color favorito de la toalla, escribe el nombre de tu mascota. ¡Así de fácil!</p>
         </div>
     </div>
 
@@ -73,203 +193,96 @@
 
     <!-- Product Grid -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <!-- Product Card 1 -->
+            <div class="product-card">
                 <img src="https://i.ibb.co/bJw0Fqx/cafe.jpg" alt="Toalla uncolor" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
+                    <h3 class="product-name">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
                     <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
+                    <p class="product-price my-2">$25,900</p>
                     <form action="https://mpago.li/2qoZH77" method="GET">
                         <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
                         <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
+
+                        <!-- Color Selector -->
+                        <div class="color-selector">
+                            <button style="background-color: #f76c6c;"></button>
+                            <button style="background-color: #ffea00;"></button>
+                            <button style="background-color: #f5c6cb;"></button>
+                            <button style="background-color: #6a4c9c;"></button>
+                            <button style="background-color: #3498db;"></button>
+                            <button style="background-color: #8e735b;"></button>
+                            <button style="background-color: #000000;"></button>
+                            <button style="background-color: #808080;"></button>
+                            <button style="background-color: #ffffff;"></button>
+                        </div>
+
+                        <button type="submit" class="cta-button w-full mt-4">
                             Comprar Ahora
                         </button>
                     </form>
+
+                    <!-- Opiniones de Clientes -->
+                    <div class="customer-reviews mt-6">
+                        <h4 class="font-semibold text-gray-800">Opiniones de clientes:</h4>
+                        <ul class="mt-2 space-y-2 text-sm text-gray-600">
+                            <li><strong>Juan P.</strong>: "¡Me encanta! La toalla es muy suave y absorbente. A mi perro le queda perfecta."</li>
+                            <li><strong>Ana R.</strong>: "Excelente calidad, el bordado del nombre es muy bonito y llegó rápido."</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="https://i.ibb.co/dG1MDFz/roja.png" alt="Toalla uncolor" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="product-name">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
+                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
+                    <p class="product-price my-2">$25,900</p>
+                    <form action="https://mpago.li/2qoZH77" method="GET">
+                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
+
+                        <!-- Color Selector -->
+                        <div class="color-selector">
+                            <button style="background-color: #f76c6c;"></button>
+                            <button style="background-color: #ffea00;"></button>
+                            <button style="background-color: #f5c6cb;"></button>
+                            <button style="background-color: #6a4c9c;"></button>
+                            <button style="background-color: #3498db;"></button>
+                            <button style="background-color: #8e735b;"></button>
+                            <button style="background-color: #000000;"></button>
+                            <button style="background-color: #808080;"></button>
+                            <button style="background-color: #ffffff;"></button>
+                        </div>
+
+                        <button type="submit" class="cta-button w-full mt-4">
+                            Comprar Ahora
+                        </button>
+                    </form>
+
+                    <!-- Opiniones de Clientes -->
+                    <div class="customer-reviews mt-6">
+                        <h4 class="font-semibold text-gray-800">Opiniones de clientes:</h4>
+                        <ul class="mt-2 space-y-2 text-sm text-gray-600">
+                            <li><strong>Pedro M.</strong>: "¡Perfecta para mi mascota! Muy suave y agradable al tacto."</li>
+                            <li><strong>Carla G.</strong>: "Quedé muy satisfecha con la calidad. Recomiendo ampliamente."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/dG1MDFz/roja.png" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/5BSDqyx/AJxt1-KMt-TLeto-Uozqcz-N6i-MQha-FFOo-O.jpg" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/BT4VzsT/morado-2.png" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/bXmXbfL/crema.jpg" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/zxfW81p/morado-2.png" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/mJL92F3/AJxt1-KNFC5-YACl-L46-B17q1fy-Yvc-L6-Mx-P.jpg" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Product Cards -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="https://i.ibb.co/6bdbQbm/rosada.png" alt="Toalla uncolor" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-                    <p class="text-sm text-gray-600 mt-1">Color: UNCOLOR</p>
-                    <p class="text-xl font-bold text-blue-600 my-2">$25,900</p>
-                    <form action="https://mpago.li/2qoZH77" method="GET">
-                        <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                        <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700">
-                            Comprar Ahora
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Repeat similar product cards for all other products -->
-            <!-- Add all other product cards following the same structure -->
-            
-        </div>
-    </main>
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2024 PETFROTHY. Todos los derechos reservados.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 Tienda de Toallas para Mascotas. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
+
+
+
+
