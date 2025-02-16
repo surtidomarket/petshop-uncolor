@@ -265,7 +265,10 @@
         </section>
 
         <section id="comprar" class="order-form">
-            <h2>Haz tu Pedido</h2>
+    <h2>Haz tu Pedido</h2>
+ 
+</section>
+
             <form id="orderForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label class="form-label" for="petName">Nombre de tu mascota</label>
@@ -306,6 +309,10 @@
                     </label>
                     <input type="email" id="email" class="form-input" required>
                 </div>
+<section id="comprar" class="order-form" style="text-align: center; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
+    <h2 style="font-size: 30px; font-weight: bold; color: #000; margin: 0;">$25.000 und</h2>
+</section>
+
 
                 <button type="submit" class="submit-button">
                     <i data-lucide="shopping-cart"></i>
@@ -315,11 +322,18 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2024 Toallas Personalizadas para Mascotas. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<footer style="background-color: #fff7ed; color: #7c2d12;">
+    <div class="container" style="text-align: center; padding: 15px; font-family: Arial, sans-serif;">
+        <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #9a3412;">Horario y Condiciones de Envío</p>
+        <p>📦 <strong>Despachos:</strong> Lunes a Viernes de 9:00 a.m. a 5:00 p.m.</p>
+        <p>🚚 <strong>Modalidad:</strong> Envío Contra Entrega disponible.</p>
+        <p>🌍 <strong>Envíos Nacionales:</strong> Tiempo estimado de entrega: 5 días hábiles.</p>
+        <p>⚠️ <strong>Importante:</strong> Los tiempos de entrega pueden variar según la ubicación y la logística de la transportadora.</p>
+        <hr style="margin: 15px 0; border: 0.5px solid #fde68a;">
+        <p>© 2024 <strong>Toallas Personalizadas para Mascotas</strong>. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
 
     <script>
         // Initialize Lucide icons
@@ -347,7 +361,7 @@ Teléfono: ${formData.phone}
 Email: ${formData.email}
             `;
             
-            window.open(`https://wa.me/573222553397?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/573204828022?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
 </body>
