@@ -1,194 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toallas Personalizadas para Mascotas | Head Pet</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Toallas Personalizadas para Mascotas</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fef9e4;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { background-color: #ff9800; color: white; padding: 1rem; text-align: center; }
+        nav { background-color: #ffcc80; padding: 0.5rem; text-align: center; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        nav a { margin: 0 1rem; color: #333; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #ff9800; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .carousel { display: flex; overflow-x: auto; gap: 1rem; padding: 1.5rem; background-color: #fff; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 2rem 0; }
+        .carousel img { width: 288px; height: 192px; object-fit: cover; border-radius: 0.5rem; transition: transform 0.3s; flex-shrink: 0; }
+        .carousel img:hover { transform: scale(1.05); }
+        .section { background-color: white; margin: 2rem 0; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .testimonial { border-left: 4px solid #ff9800; padding-left: 1rem; margin: 1rem 0; }
+        .form { background-color: #fff3e0; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
+        .form-input, .form-select { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 0.5rem; margin-top: 0.25rem; }
+        .form-input:focus, .form-select:focus { outline: none; border-color: #ff9800; box-shadow: 0 0 0 2px rgba(255,152,0,0.2); }
+        .button { width: 100%; background-color: #ff9800; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-weight: 500; cursor: pointer; transition: background-color 0.3s; }
+        .button:hover { background-color: #f57c00; }
+        footer { background-color: #ff9800; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
     </style>
 </head>
 <body>
-
-<div class="header py-8 px-4 bg-gradient-to-r from-orange-500 to-yellow-400 rounded-lg shadow-md text-center">
-    <h1 class="text-6xl font-extrabold text-white tracking-widest drop-shadow-lg">Lo Mejor para tu Mascota</h1>
-    <p class="text-3xl text-yellow-300 mt-4 leading-relaxed font-serif font-bold drop-shadow-lg bg-black/30 p-3 rounded-lg">
-  Personaliza la toalla de tu peludo amigo con su <span class="text-yellow-400">nombre</span> y <span class="text-yellow-400">color favorito</span>. Calidad, <span class="italic">suavidad</span> y mucho <span class="text-red-300">amor</span> en cada secado. 🐕✨
-</p>
-
-
-</div>
-
-
-
-<div class="bg-white py-8 px-4 shadow-sm mb-8 rounded-lg max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <div><h3 class="font-bold text-pink-600">📦 Tiempo de Entrega</h3><p>5 días hábiles</p></div>
-        <div><h3 class="font-bold text-pink-600">⏰ Horarios de Despacho</h3><p>Lunes a Viernes, 8:00 a.m. - 5:00 p.m.</p></div>
-        <div><h3 class="font-bold text-pink-600">💳 Métodos de Pago</h3><p>Online y NEQUI</p></div>
-        <div><h3 class="font-bold text-pink-600">📢 Nota Importante</h3><p>Los tiempos pueden variar según tu ubicación.</p></div>
-    </div>
-</div>
-
-<main class="max-w-5xl mx-auto px-2 sm:px-4 lg:px-6 py-6">
-    <!-- Carrusel -->
-    <div class="relative w-full overflow-hidden flex justify-center">
-        <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.ibb.co/BT4VzsT/morado-2.png" alt="Toalla uncolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.postimg.cc/R6rS2KLW/azul.jpg" alt="Toalla multicolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.postimg.cc/xq3my19v/gris.jpg" alt="Toalla multicolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.postimg.cc/xcsbhpJq/roja.png" alt="Toalla multicolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.ibb.co/h2M9J4w/undefined-image-86.png" alt="Toalla multicolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
-            <div class="w-1/4 flex-shrink-0 px-1">
-                <img src="https://i.postimg.cc/MMy6wH9d/amarilla.jpg" alt="Toalla multicolor" class="w-full h-40 object-cover rounded-lg">
-            </div>
+    <header>
+        <div class="container">
+            <h1>🐾 Toallas Personalizadas para Mascotas</h1>
+            <p>La mejor calidad para consentir a tu compañero peludo</p>
         </div>
-    </div>
-</main>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <a href="#productos">Productos</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#comprar">Comprar</a>
+        </div>
+    </nav>
 
-    <div class="flex justify-center mt-4">
-        <button class="bg-orange-400 text-white px-4 py-2 rounded-l-lg" onclick="prevSlide()">Anterior</button>
-        <button class="bg-orange-400 text-white px-4 py-2 rounded-r-lg" onclick="nextSlide()">Siguiente</button>
-    </div>
+    <main class="container">
+        <section id="productos" class="carousel">
+            <img src="https://i.ibb.co/fz9MLtyr/rosada.png" alt="Toalla Personalizada 1">
+            <img src="https://i.ibb.co/4w2rMMcL/cafe.jpg" alt="Toalla Personalizada 2">
+            <img src="https://i.ibb.co/wBXjW5P/azul.jpg" alt="Toalla Personalizada 3">
+            <img src="https://i.ibb.co/5nbRDqc/crema.jpg" alt="Toalla Personalizada 4">
+            <img src="https://i.ibb.co/P48bDDV/amarilla.jpg" alt="Toalla Personalizada 5">
+        </section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
-        <div class="product-card bg-white p-4 shadow rounded-lg">
-            <img src="https://i.ibb.co/BT4VzsT/morado-2.png" alt="Toalla uncolor">
-            <h3 class="mt-4 font-bold">Toalla Ultra Absorbente Bordada UNCOLOR</h3>
-            <p>Color: UNCOLOR</p>
-            <p class="text-green-600 font-bold">$25,000</p>
-           <form action="https://mpago.li/2qoZH77" method="GET">
-                    <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                    <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
+        <section class="section">
+            <h2>¿Por qué nuestras toallas?</h2>
+            <p>Nuestras toallas están hechas con los mejores materiales para garantizar suavidad, absorción y durabilidad. Además, puedes personalizarlas con el nombre de tu mascota.</p>
+        </section>
 
-                    <!-- Color Selector -->
-                    <div class="color-selector flex space-x-2">
-                        <button style="background-color: #f76c6c;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #ffea00;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #f5c6cb;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #6a4c9c;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #3498db;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #8e735b;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #000000;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #808080;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #ffffff;" class="w-6 h-6 rounded-full border"></button>
-                    </div>
+        <section id="testimonios" class="section">
+            <h2>Testimonios</h2>
+            <div class="testimonial">
+                <p>"Las toallas son suaves y a mi perrito le encantaron. La personalización quedó perfecta."</p>
+                <p><strong>- Luz M.</strong></p>
+            </div>
+            <div class="testimonial">
+                <p>"Muy buena calidad. Se nota que son hechas con amor y dedicación."</p>
+                <p><strong>- Carlos G.</strong></p>
+            </div>
+        </section>
 
-                    <button type="submit" class="cta-button w-full mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-    Comprar Ahora
-</button>
+        <section id="faq" class="section">
+            <h2>Preguntas Frecuentes</h2>
+            <div>
+                <h3>¿Cuánto tarda la entrega?</h3>
+                <p>Aproximadamente 5 a 7 días hábiles.</p>
+            </div>
+            <div>
+                <h3>¿Cómo personalizo mi toalla?</h3>
+                <p>En el formulario de compra puedes indicar el nombre de tu mascota.</p>
+            </div>
+        </section>
 
-                </form>
-
-                <!-- Opiniones de Clientes -->
-                <div class="customer-reviews mt-6">
-                    <h4 class="font-semibold text-gray-800">Opiniones de clientes:</h4>
-                    <ul class="mt-2 space-y-2 text-sm text-gray-600">
-                       <li><strong>Ana P.</strong>: "Me encantó la personalización, el nombre de mi perrito quedó hermoso. La toalla es súper suave."</li>
-<li><strong>Carlos G.</strong>: "Muy buena calidad, seca rapidísimo a mi perro después del baño. ¡Recomendada!"</li>
-
-                    </ul>
+        <section id="comprar" class="form">
+            <h2>Haz tu Pedido</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label class="form-label">Nombre de tu mascota</label>
+                    <input type="text" class="form-input" id="petName" required>
                 </div>
-            </div>
-        </div>
-    </div>
-</main>
-        
-        <div class="product-card bg-white p-4 shadow rounded-lg">
-            <img src="https://i.ibb.co/h2M9J4w/undefined-image-86.png" alt="Toalla multicolor">
-            <h3 class="mt-4 font-bold">Toalla Ultra Absorbente Bordada MULTICOLOR</h3>
-            <p>Color: VARIADO</p>
-            <p class="text-green-600 font-bold">$30,000</p>
-             <form action="https://mpago.li/2qoZH77" method="GET">
-                    <input type="text" name="pet_name" placeholder="Nombre de tu mascota" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
-                    <input type="email" name="email" placeholder="Correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" required>
 
-                    <!-- Color Selector -->
-                    <div class="color-selector flex space-x-2">
-                        <button style="background-color: #f76c6c;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #ffea00;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #f5c6cb;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #6a4c9c;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #3498db;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #8e735b;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #000000;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #808080;" class="w-6 h-6 rounded-full"></button>
-                        <button style="background-color: #ffffff;" class="w-6 h-6 rounded-full border"></button>
-                    </div>
-
-                   <button type="submit" class="cta-button w-full mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
-    Comprar Ahora
-</button>
-
-                </form>
-
-                <!-- Opiniones de Clientes -->
-                <div class="customer-reviews mt-6">
-                    <h4 class="font-semibold text-gray-800">Opiniones de clientes:</h4>
-                    <ul class="mt-2 space-y-2 text-sm text-gray-600">
-                       <li><strong>Diego L.</strong>: "La toalla es increíble, absorbe muy bien y mi mascota la adora."</li>
-<li><strong>Valeria M.</strong>: "Excelente compra, el bordado quedó perfecto y la calidad es superior."</li>
-                    </ul>
+                <div class="form-group">
+                    <label class="form-label">Color de toalla</label>
+                    <select class="form-select" id="color">
+                        <option>Azul</option>
+                        <option>Rosa</option>
+                        <option>Verde</option>
+                        <option>Amarillo</option>
+                        <option>marron</option>
+                        <option>gris</option>
+                        <option>blanco</option>
+                        <option>Verde</option>
+                        <option>crema</option>
+                    </select>
                 </div>
-            </div>
-        </div>
-    </div>
-</main>
-        </div>
-    </div>
-</main>
-<footer class="bg-gray-50 text-white py-4 flex justify-center items-center">
-  <img src="https://i.postimg.cc/Vk6X80Mx/cute-puppy-blue-towel-grooming-6.png" class="h-40 w-auto">
-</footer>
 
-<footer class="bg-orange-400 text-white text-center py-4">
-    <p>© 2025 Head Pet - Todos los derechos reservados</p>
-</footer>
+                <div class="form-group">
+                    <label class="form-label">📍 Dirección</label>
+                    <input type="text" class="form-input" id="address" required>
+                </div>
 
-<script>
-    let index = 0;
-    const slides = document.querySelectorAll('#carousel > div');
-    const totalSlides = slides.length;
+                <div class="form-group">
+                    <label class="form-label">📱 Teléfono</label>
+                    <input type="tel" class="form-input" id="phone" required>
+                </div>
 
-    function showSlide() {
-        const carousel = document.getElementById('carousel');
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
+                <div class="form-group">
+                    <label class="form-label">📧 Correo electrónico</label>
+                    <input type="email" class="form-input" id="email" required>
+                </div>
 
-    function nextSlide() {
-        index = (index + 1) % totalSlides;
-        showSlide();
-    }
-
-    function prevSlide() {
-        index = (index - 1 + totalSlides) % totalSlides;
-        showSlide();
-    }
-</script>
-
-</body>
-</html>
-
-
-
+                <button type="submit" class="button">Comprar Ahora</button>
+            </form>
+        </section>
+    </main>
